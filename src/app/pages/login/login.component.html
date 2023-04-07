@@ -1,0 +1,25 @@
+<div class="container bg-light text-center my-5">
+  <h2>Login</h2>
+  <form class="py-3" name="form" [formGroup]="loginForm" (ngSubmit)="login()" role="form">
+    <div class="form">
+      <label class="form-label" for="email">Email</label>
+      <input class="form-control" type="text" name="email" id="email" formControlName="email" required />
+      <span class="form-text" ng-show="form.email.$dirty
+          && form.email.$error.required">
+        <div class="required bg-danger bg-gradient text-center text-white">Email is required</div>
+      </span>
+    </div>
+    <div>
+      <label class="form-label" for="password">Password</label>
+      <input class="form-control" type="password" name="password" id="password" formControlName="password" required />
+      <span class="form-text" ng-show="form.password.$dirty
+          && form.password.$error.required">
+        <div class="required bg-danger bg-gradient text-center text-white">Password is required</div>
+      </span>
+    </div>
+    <div class="form-actions">
+      <button type="submit" ng-disabled="form.$invalid || vm.dataLoading">Login</button>
+    </div>
+  </form>
+
+</div>

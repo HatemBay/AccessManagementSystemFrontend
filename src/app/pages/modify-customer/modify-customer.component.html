@@ -1,0 +1,39 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #customerForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="customer.name" class="form-control mb-2" id="name" name="name" [value]="data.name"
+          placeholder="Enter your name" required #name="ngModel">
+      </div>
+      <div [hidden]="name.untouched" class="alert alert-danger">Name is required</div>
+      <div class="form-group">
+        <label for="companyName">Company Name</label>
+        <input type="text" [(ngModel)]="customer.companyName" class="form-control mb-2" id="companyName" name="companyName"
+          [value]="data.companyName" placeholder="Enter your company name" required #companyName="ngModel">
+      </div>
+      <div [hidden]="companyName.untouched" class="alert alert-danger">Company Name is required</div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" [(ngModel)]="customer.email" class="form-control mb-2" id="email" name="email"
+          [value]="data.email" placeholder="Enter your email address" required #email="ngModel">
+        <div [hidden]="email.untouched" class="alert alert-danger">Email is required</div>
+      </div>
+      <!-- ##################   TO BE EDITED WHEN INFORMED WHETHER PASSWORD SHOULD BE MODIFIED ALONE ################## -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" [(ngModel)]="customer.password" class="form-control mb-2" id="password" name="password"
+          placeholder="Enter your password" #password="ngModel">
+      </div>
+      <!-- ############################################################################################################# -->
+      <div class="form-group">
+        <label for="cin">CIN</label>
+        <input type="text" [(ngModel)]="customer.cin" class="form-control mb-2" id="cin" name="cin" [value]="data.cin"
+          placeholder="Enter your CIN" required #cin="ngModel">
+        <div [hidden]="cin.untouched" class="alert alert-danger">CIN is required</div>
+      </div>
+      <button type="submit" (click)="updateCustomer(customer, customerId)"
+        [disabled]="!customerForm.form.valid && !customerId" class="btn btn-info">Modify</button>
+    </form>
+  </div>
+</div>
