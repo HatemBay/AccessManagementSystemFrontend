@@ -14,7 +14,7 @@ export class DashboardComponent {
   }
 
   ngOnInit() {
-    this.authService.getUserDetails().then(data => console.log(data?.name));
+    this.authService.getUserDetails().name;
   }
 
   public logout() {

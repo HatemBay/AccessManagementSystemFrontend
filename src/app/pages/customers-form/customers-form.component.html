@@ -6,30 +6,30 @@
         <input type="text" [(ngModel)]="customer.name" class="form-control" id="name" name="name"
           placeholder="Enter your name" required #name="ngModel">
       </div>
-      <div [hidden]="!name.pristine" class="alert alert-danger">Name is required</div>
+      <div [hidden]="!name.touched" class="alert alert-danger">Name is required</div>
       <div class="form-group">
         <label for="companyName">Company Name</label>
         <input type="text" [(ngModel)]="customer.companyName" class="form-control" id="companyName" name="companyName"
           placeholder="Enter your companyName" required #companyName="ngModel">
       </div>
-      <div [hidden]="!companyName.pristine" class="alert alert-danger">Company Name is required</div>
+      <div [hidden]="!companyName.touched" class="alert alert-danger">Company Name is required</div>
       <div class="form-group">
         <label for="email">Email</label>
         <input type="text" [(ngModel)]="customer.email" class="form-control" id="email" name="email"
           placeholder="Enter your email address" required #email="ngModel">
-        <div [hidden]="!email.pristine" class="alert alert-danger">Email is required</div>
+        <div [hidden]="!email.touched" class="alert alert-danger">Email is required</div>
       </div>
       <div class="form-group">
         <label for="password">Password</label>
         <input type="password" [(ngModel)]="customer.password" class="form-control" id="password" name="password"
           placeholder="Enter your password" required #password="ngModel">
-        <div [hidden]="!password.pristine" class="alert alert-danger">Password is required</div>
+        <div [hidden]="!password.touched" class="alert alert-danger">Password is required</div>
       </div>
       <div class="form-group">
         <label for="cin">CIN</label>
         <input type="text" [(ngModel)]="customer.cin" class="form-control" id="cin" name="cin"
           placeholder="Enter your CIN" required #cin="ngModel">
-        <div [hidden]="!cin.pristine" class="alert alert-danger">CIN is required</div>
+        <div [hidden]="!cin.touched" class="alert alert-danger">CIN is required</div>
       </div>
       <button type="submit" [disabled]="!customerForm.form.valid" class="btn btn-info">Submit</button>
     </form>

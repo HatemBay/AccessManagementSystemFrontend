@@ -2,16 +2,16 @@ import { Customer } from "../customer/customer";
 
 export class Demand {
   id?: number;
-  customer?: Customer;
+  user?: Customer;
   concernedSite?: string;
   concernedLocal?: string;
   demandObject?: string;
   equipmentAdd?: string;
   equipmentRecovery?: string;
-  visitDayStart?: string;
-  visitDayEnd?: string;
-  visitDateStart?: Date;
-  visitDateEnd?: Date;
+  visitDayStart?: Date;
+  visitDayEnd?: Date;
+  visitDateStart?: string;
+  visitDateEnd?: string;
   refusalReason?: string;
   notes?: string;
   created_at?: Date;

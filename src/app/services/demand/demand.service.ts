@@ -10,7 +10,7 @@ export class DemandService {
   private baseUri: string;
 
   constructor(private http: HttpClient) {
-    this.baseUri = 'http://localhost:8080/demand';
+    this.baseUri = 'http://localhost:8080/demands';
   }
 
   public findById(id: number): Observable<Demand> {
@@ -23,7 +23,10 @@ export class DemandService {
     // return this.http.get<Demand[]>(`${this.baseUri}`);
     return this.http.get<Demand[]>(this.baseUri + '/get-all');
   }
-
+  public findAllByUserId(userId: number): Observable<Demand[]> {
+    // return this.http.get<Demand[]>(`${this.baseUri}`);
+    return this.http.get<Demand[]>(this.baseUri + '/get-all/user/' + userId);
+  }
   public save(demand: Demand) {
     return this.http.post<Demand>(this.baseUri + '/new', demand);
   }

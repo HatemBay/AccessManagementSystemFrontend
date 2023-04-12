@@ -1,0 +1,42 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Company Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">CIN</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let demand of demands">
+          <td>
+            <div>{{ demand.id }}</div>
+          </td>
+          <td>
+            <div>{{ demand.name }}</div>
+          </td>
+          <td>
+            <div>{{ demand.companyName }}</div>
+          </td>
+          <td>
+            <div><a href="mailto:{{ demand.email }}">{{ demand.email }}</a></div>
+          </td>
+          <td>{{ demand.cin }}</td>
+          <td class="flex-row">
+            <ng-container *ngIf="demand.email !== myEmail">
+              <div [routerLink]="" (click)="modify(demand.id)" class="btn btn-warning me-2">Modify</div>
+              <a [routerLink]="" (click)="del(demand)" class="btn btn-danger">Delete</a>
+            </ng-container>
+            <ng-container *ngIf="demand.email === myEmail">
+              <div>Not Allowed</div>
+            </ng-container>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

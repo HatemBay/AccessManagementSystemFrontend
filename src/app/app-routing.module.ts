@@ -11,6 +11,7 @@ import { ForbiddenComponent } from './pages/forbidden/forbidden.component';
 import { ModifyCustomerComponent } from './pages/modify-customer/modify-customer.component';
 import { CustomerDashboardComponent } from './pages/customer/customer-dashboard/customer-dashboard.component';
 import { DemandFormComponent } from './pages/customer/demand-form/demand-form.component';
+import { DemandListComponent } from './pages/customer/demand-list/demand-list.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'modifycustomer', component: ModifyCustomerComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: "ADMIN" } },
   { path: 'customer-dashboard', component: CustomerDashboardComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: "CUSTOMER" } },
   { path: 'add-demand', component: DemandFormComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: "CUSTOMER" } },
+  { path: 'demands', component: DemandListComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: "CUSTOMER" } },
   { path: 'forbidden', component: ForbiddenComponent },
 ];
 

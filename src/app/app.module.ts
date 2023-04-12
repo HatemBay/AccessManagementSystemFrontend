@@ -15,6 +15,8 @@ import { ForbiddenComponent } from './pages/forbidden/forbidden.component';
 import { ModifyCustomerComponent } from './pages/modify-customer/modify-customer.component';
 import { CustomerDashboardComponent } from './pages/customer/customer-dashboard/customer-dashboard.component';
 import { DemandFormComponent } from './pages/customer/demand-form/demand-form.component';
+import { DemandListComponent } from './pages/customer/demand-list/demand-list.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { DemandFormComponent } from './pages/customer/demand-form/demand-form.co
     ModifyCustomerComponent,
     CustomerDashboardComponent,
     DemandFormComponent,
+    DemandListComponent,
   ],
   // declarations: [AppComponent, CustomersListComponent, CustomersFormComponent],
   imports: [
@@ -38,7 +41,7 @@ import { DemandFormComponent } from './pages/customer/demand-form/demand-form.co
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [CustomerService],
+  providers: [CustomerService, DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

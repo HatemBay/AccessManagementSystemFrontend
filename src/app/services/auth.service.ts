@@ -34,23 +34,21 @@ export class AuthService {
     return localStorage.getItem("user-email")!;
   }
 
+
+
   public isLoggedIn(): boolean {
-    const user = this.getStorage();
+    const userEmail = this.getStorage();
     console.log(localStorage.getItem("user-email"));
 
-    if (user && user !== null) {
+    if (userEmail && userEmail !== null) {
       return true;
     } else {
       return false;
     }
   }
 
-  public async getUserDetails(): Promise<UserDetails | null> {
-    const user = await this.customerService.findByEmail(this.getStorage()).toPromise();
-    if (user) {
-      return JSON.parse(JSON.stringify(user));
-    }
-    return null;
+  public getUserDetails(): Customer {
+    return JSON.parse(localStorage.getItem("user-info") || "")
   }
 
 }

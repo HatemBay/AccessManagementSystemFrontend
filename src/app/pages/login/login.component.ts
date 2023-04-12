@@ -19,7 +19,14 @@ export class LoginComponent {
   loginForm: any;
   constructor(private router: Router, private route: ActivatedRoute, private customerService: CustomerService,
     private authService: AuthService, private cdRef: ChangeDetectorRef, private fb: FormBuilder) {
-
+    const userInfo = authService.getUserDetails();
+    if (userInfo && userInfo !== null) {
+      if (userInfo.role === "ADMIN")
+        this.router.navigateByUrl("/dashboard")
+      else if (userInfo.role === "CUSTOMER") {
+        this.router.navigateByUrl("/customer-dashboard")
+      }
+    }
   }
 
   ngOnInit() {
@@ -54,6 +61,7 @@ export class LoginComponent {
         }
         else if (resultData.message === "Login Success") {
           this.customerService.findByEmail(this.email).subscribe(data => {
+            localStorage.setItem("user-info", JSON.stringify(data));
             if (data.role === "ADMIN") {
               this.router.navigateByUrl("/dashboard")
             } else if (data.role === "CUSTOMER") {

@@ -6,83 +6,86 @@
         <input type="text" [(ngModel)]="demand.concernedSite" class="form-control" id="concernedSite"
           name="concernedSite" placeholder="Enter your concernedSite" required #concernedSite="ngModel">
       </div>
-      <div [hidden]="!concernedSite.pristine" class="alert alert-danger">Name is required</div>
+      <div [hidden]="!concernedSite.touched || !concernedSite.pristine" class="alert alert-danger">Concerned Site is
+        required</div>
       <div class="form-group">
         <label for="concernedLocal">Concerned Local</label>
         <input type="text" [(ngModel)]="demand.concernedLocal" class="form-control" id="concernedLocal"
           name="concernedLocal" placeholder="Enter your concernedLocal" required #concernedLocal="ngModel">
       </div>
-      <div [hidden]="!concernedSite.pristine" class="alert alert-danger">Concerned Local is required</div>
+      <div [hidden]="!concernedLocal.touched || !concernedLocal.pristine" class="alert alert-danger">Concerned Local is
+        required</div>
       <div class="form-group">
         <label for="demandObject">Demand Object</label>
         <input type="text" [(ngModel)]="demand.demandObject" class="form-control" id="demandObject" name="demandObject"
           placeholder="Enter your Demand Object" required #demandObject="ngModel">
-        <div [hidden]="!demandObject.pristine" class="alert alert-danger">Demand Object is required</div>
+        <div [hidden]="!demandObject.touched  || !demandObject.pristine" class="alert alert-danger">Demand Object is
+          required</div>
       </div>
       <div class="form-group">
         <label for="equipmentAdd">Equipment Add</label>
         <div class="form-check">
-          <input class="form-check-input" type="radio" [(ngModel)]="demand.equipmentAdd" name="equipmentAdd"
-            id="equipmentAdd1" #equipmentAdd="ngModel">
+          <input class="form-check-input" type="radio" (change)="equipmentAddChoice(yes)" name="equipmentAdd" id="equipmentAdd1"
+            [checked]="false">
           <label class="form-check-label" for="equipmentAdd1" required ng-model="equipmentAdd">
-            Default radio
+            Yes
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" [(ngModel)]="demand.equipmentAdd" name="equipmentAdd"
-            id="equipmentAdd2" [checked]="true" #equipmentAdd="ngModel">
+          <input class="form-check-input" type="radio" (change)="equipmentAddChoice(no)" name="equipmentAdd" id="equipmentAdd2"
+            [checked]="true">
           <label class="form-check-label" for="equipmentAdd2" required ng-model="equipmentAdd">
-            Default checked radio
+            No
           </label>
         </div>
       </div>
       <div class="form-group">
         <label for="equipmentRecovery">Equipment Recovery</label>
         <div class="form-check">
-          <input class="form-check-input" type="radio" [(ngModel)]="demand.equipmentRecovery" name="equipmentRecovery"
-            id="equipmentRecovery1" #equipmentRecovery="ngModel">
+          <input class="form-check-input" type="radio" (change)="equipmentRecoveryChoice(yes)" name="equipmentRecovery" id="equipmentRecovery1">
           <label class="form-check-label" for="equipmentRecovery1" required ng-model="equipmentRecovery">
-            Default radio
+            Yes
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" [(ngModel)]="demand.equipmentRecovery" name="equipmentRecovery"
-            id="equipmentRecovery2" [checked]="true" #equipmentRecovery="ngModel">
+          <input class="form-check-input" type="radio" (change)="equipmentRecoveryChoice(no)" name="equipmentRecovery" id="equipmentRecovery2"
+            [checked]="true">
           <label class="form-check-label" for="equipmentRecovery2" required ng-model="equipmentRecovery">
-            Default checked radio
+            No
           </label>
         </div>
       </div>
       <div class="form-group">
-        <label for="visitDayStart">visitDayStart</label>
-        <input type="text" [(ngModel)]="demand.visitDayStart" class="form-control" id="visitDayStart"
-          name="visitDayStart" placeholder="Enter your visitDayStart" required #visitDayStart="ngModel">
-        <div [hidden]="!visitDayStart.pristine" class="alert alert-danger">visitDayStart is required</div>
-      </div>
-      <div class="form-group">
-        <label for="visitDayEnd">visitDayEnd</label>
-        <input type="text" [(ngModel)]="demand.visitDayEnd" class="form-control" id="visitDayEnd" name="visitDayEnd"
-          placeholder="Enter your visitDayEnd" required #visitDayEnd="ngModel">
-        <div [hidden]="!visitDayEnd.pristine" class="alert alert-danger">visitDayEnd is required</div>
+        <label for="visitDateStart">visitDateStart</label>
+        <input type="time" value="08:30:00" step="300" [(ngModel)]="demand.visitDateStart" class="form-control day-time"
+          id="visitDateStart" name="visitDateStart" required #visitDateStart="ngModel">
+        <div [hidden]="!visitDateStart.touched  || !visitDateStart.pristine" class="alert alert-danger">visitDateStart is
+          required</div>
       </div>
       <div class="form-group">
         <label for="visitDateEnd">visitDateEnd</label>
-        <div class="input-group date" id="datepicker">
-          <input type="text" [(ngModel)]="demand.visitDateEnd" class="form-control" id="visitDateEnd"
-            name="visitDateEnd" placeholder="Enter your visitDateEnd" required #visitDateEnd="ngModel">
-          <span class="input-group-append">
-            <span class="input-group-text bg-light d-block">
-              <i class="fa fa-calendar"></i>
-            </span>
-          </span>
+        <input type="time" value="08:30:00" step="300" [(ngModel)]="demand.visitDateEnd" class="form-control day-time"
+          id="visitDateEnd" name="visitDateEnd" required #visitDateEnd="ngModel">
+        <div [hidden]="!visitDateEnd.touched  || !visitDateEnd.pristine" class="alert alert-danger">visitDateEnd is
+          required</div>
+      </div>
+      <div class="form-group">
+        <label for="">Visit Day</label>
+        <div class="mb-2 mr-sm-2 mb-sm-0 position-relative form-group">
+          <label for="examplePassword22" class="ml-5 mr-2">From</label>
+          <input [value]="today" name="visitDayStart" type="date" [(ngModel)]="demand.visitDayStart"
+            class="form-control day-time" id="visitDayStart" name="visitDayStart" required #visitDayStart="ngModel">
+          <label for="examplePassword22" class="ml-5 mr-2">To</label>
+          <input [value]="today | date:'yyyy-MM-dd'" name="visitDayEnd" type="date" [(ngModel)]="demand.visitDayEnd"
+            class="form-control day-time" id="visitDayEnd" name="visitDayEnd" required #visitDayEnd="ngModel">
         </div>
-        <div [hidden]="!visitDateEnd.pristine" class="alert alert-danger">visitDateEnd is required</div>
       </div>
       <div class="form-group">
         <label for="refusalReason">Refusal Reason</label>
         <input type="text" [(ngModel)]="demand.refusalReason" class="form-control" id="refusalReason"
           name="refusalReason" placeholder="Enter your refusalReason" required #refusalReason="ngModel">
-        <div [hidden]="!refusalReason.pristine" class="alert alert-danger">refusal Reason is required</div>
+        <div [hidden]="!refusalReason.touched  || !refusalReason.pristine" class="alert alert-danger">refusal Reason is
+          required</div>
       </div>
       <div class="form-group">
         <label for="Notes">Notes</label>
