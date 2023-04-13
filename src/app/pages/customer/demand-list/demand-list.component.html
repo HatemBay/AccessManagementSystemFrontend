@@ -1,40 +1,65 @@
+<app-customer-dashboard></app-customer-dashboard>
 <div class="card my-5">
   <div class="card-body">
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Name</th>
           <th scope="col">Company Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">CIN</th>
-          <th scope="col">Actions</th>
+          <th scope="col">Concerned Site</th>
+          <th scope="col">Concerned Local</th>
+          <th scope="col">Equipment Addition</th>
+          <th scope="col">Equipement Recovery</th>
+          <th scope="col">Date Of Visit</th>
+          <th scope="col">Visit Schedule</th>
+          <th scope="col">Created At:</th>
+          <th scope="col">State</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let demand of demands">
-          <td>
-            <div>{{ demand.id }}</div>
-          </td>
-          <td>
-            <div>{{ demand.name }}</div>
-          </td>
-          <td>
-            <div>{{ demand.companyName }}</div>
-          </td>
-          <td>
-            <div><a href="mailto:{{ demand.email }}">{{ demand.email }}</a></div>
-          </td>
-          <td>{{ demand.cin }}</td>
-          <td class="flex-row">
-            <ng-container *ngIf="demand.email !== myEmail">
-              <div [routerLink]="" (click)="modify(demand.id)" class="btn btn-warning me-2">Modify</div>
-              <a [routerLink]="" (click)="del(demand)" class="btn btn-danger">Delete</a>
-            </ng-container>
-            <ng-container *ngIf="demand.email === myEmail">
-              <div>Not Allowed</div>
-            </ng-container>
-          </td>
+        <tr *ngFor="let demand of demands; let i=index">
+          <ng-container *ngIf="demand.user.email === myEmail">
+            <td>
+              <div>{{ i+1 }}</div>
+            </td>
+            <td>
+              <div>{{ demand.user.companyName }}</div>
+            </td>
+            <td>
+              <div>{{ demand.concernedSite }}</div>
+            </td>
+            <td>
+              <div>{{ demand.concernedLocal }}</div>
+            </td>
+            <td>
+              <div>{{ demand.equipmentAdd }}</div>
+            </td>
+            <td>
+              <div>{{ demand.equipmentRecovery }}</div>
+            </td>
+            <td>
+              <div class="inline-block me-5">From: {{ demand.visitDayStart | date: 'dd/MM/yyyy' }}</div>
+              <div class="inline-block me-5">To: {{ demand.visitDayEnd | date: 'dd/MM/yyyy' }}</div>
+            </td>
+            <td>
+              <div class="inline-block me-5">From: {{ demand.visitDateStart }}</div>
+              <div class="inline-block me-5">To: {{ demand.visitDateEnd }}</div>
+            </td>
+            <td>
+              <div>{{ demand.created_at | date: 'dd/MM/yyyy' }}</div>
+            </td>
+            <td class="flex-row">
+              <ng-container *ngIf="demand.state === null">
+                <div>In Treatement..</div>
+              </ng-container>
+              <ng-container *ngIf="demand.state === 0">
+                <div>Refused</div>
+              </ng-container>
+              <ng-container *ngIf="demand.state === 1">
+                <div>Accepted</div>
+              </ng-container>
+            </td>
+          </ng-container>
         </tr>
       </tbody>
     </table>

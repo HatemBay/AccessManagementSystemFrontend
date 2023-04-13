@@ -12,6 +12,7 @@ export class Demand {
   visitDayEnd?: Date;
   visitDateStart?: string;
   visitDateEnd?: string;
+  state?: boolean;
   refusalReason?: string;
   notes?: string;
   created_at?: Date;

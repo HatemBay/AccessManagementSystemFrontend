@@ -25,15 +25,15 @@
       <div class="form-group">
         <label for="equipmentAdd">Equipment Add</label>
         <div class="form-check">
-          <input class="form-check-input" type="radio" (change)="equipmentAddChoice(yes)" name="equipmentAdd" id="equipmentAdd1"
-            [checked]="false">
+          <input class="form-check-input" type="radio" (change)="equipmentAddChoice(yes)" name="equipmentAdd"
+            id="equipmentAdd1" [checked]="false">
           <label class="form-check-label" for="equipmentAdd1" required ng-model="equipmentAdd">
             Yes
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" (change)="equipmentAddChoice(no)" name="equipmentAdd" id="equipmentAdd2"
-            [checked]="true">
+          <input class="form-check-input" type="radio" (change)="equipmentAddChoice(no)" name="equipmentAdd"
+            id="equipmentAdd2" [checked]="true">
           <label class="form-check-label" for="equipmentAdd2" required ng-model="equipmentAdd">
             No
           </label>
@@ -42,14 +42,15 @@
       <div class="form-group">
         <label for="equipmentRecovery">Equipment Recovery</label>
         <div class="form-check">
-          <input class="form-check-input" type="radio" (change)="equipmentRecoveryChoice(yes)" name="equipmentRecovery" id="equipmentRecovery1">
+          <input class="form-check-input" type="radio" (change)="equipmentRecoveryChoice(yes)" name="equipmentRecovery"
+            id="equipmentRecovery1">
           <label class="form-check-label" for="equipmentRecovery1" required ng-model="equipmentRecovery">
             Yes
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" (change)="equipmentRecoveryChoice(no)" name="equipmentRecovery" id="equipmentRecovery2"
-            [checked]="true">
+          <input class="form-check-input" type="radio" (change)="equipmentRecoveryChoice(no)" name="equipmentRecovery"
+            id="equipmentRecovery2" [checked]="true">
           <label class="form-check-label" for="equipmentRecovery2" required ng-model="equipmentRecovery">
             No
           </label>
@@ -59,7 +60,8 @@
         <label for="visitDateStart">visitDateStart</label>
         <input type="time" value="08:30:00" step="300" [(ngModel)]="demand.visitDateStart" class="form-control day-time"
           id="visitDateStart" name="visitDateStart" required #visitDateStart="ngModel">
-        <div [hidden]="!visitDateStart.touched  || !visitDateStart.pristine" class="alert alert-danger">visitDateStart is
+        <div [hidden]="!visitDateStart.touched  || !visitDateStart.pristine" class="alert alert-danger">visitDateStart
+          is
           required</div>
       </div>
       <div class="form-group">
@@ -80,7 +82,7 @@
             class="form-control day-time" id="visitDayEnd" name="visitDayEnd" required #visitDayEnd="ngModel">
         </div>
       </div>
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="refusalReason">Refusal Reason</label>
         <input type="text" [(ngModel)]="demand.refusalReason" class="form-control" id="refusalReason"
           name="refusalReason" placeholder="Enter your refusalReason" required #refusalReason="ngModel">
@@ -91,7 +93,7 @@
         <label for="Notes">Notes</label>
         <input type="text" [(ngModel)]="demand.notes" class="form-control" id="notes" name="notes"
           placeholder="Enter your Notes" #notes="ngModel">
-      </div>
+      </div> -->
       <button type="submit" [disabled]="!demandForm.form.valid" class="btn btn-info">Submit</button>
     </form>
   </div>
