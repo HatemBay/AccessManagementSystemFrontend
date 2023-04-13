@@ -1,0 +1,94 @@
+<app-dashboard></app-dashboard>
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Customer Name</th>
+          <th scope="col">Company Name</th>
+          <th scope="col">Concerned Site</th>
+          <th scope="col">Concerned Local</th>
+          <th scope="col">Equipment Addition</th>
+          <th scope="col">Equipement Recovery</th>
+          <th scope="col">Date Of Visit</th>
+          <th scope="col">Visit Schedule</th>
+          <th scope="col">Created At:</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let demand of demands; let i=index">
+          <ng-container *ngIf="!demand.state">
+            <td>
+              <div>{{ i+1 }}</div>
+            </td>
+            <td>
+              <div>{{ demand.user.name }}</div>
+            </td>
+            <td>
+              <div>{{ demand.user.companyName }}</div>
+            </td>
+            <td>
+              <div>{{ demand.concernedSite }}</div>
+            </td>
+            <td>
+              <div>{{ demand.concernedLocal }}</div>
+            </td>
+            <td>
+              <div>{{ demand.equipmentAdd }}</div>
+            </td>
+            <td>
+              <div>{{ demand.equipmentRecovery }}</div>
+            </td>
+            <td>
+              <div class="inline-block me-5">From: {{ demand.visitDayStart | date: 'dd/MM/yyyy' }}</div>
+              <div class="inline-block me-5">To: {{ demand.visitDayEnd | date: 'dd/MM/yyyy' }}</div>
+            </td>
+            <td>
+              <div class="inline-block me-5">From: {{ demand.visitDateStart }}</div>
+              <div class="inline-block me-5">To: {{ demand.visitDateEnd }}</div>
+            </td>
+            <td>
+              <div>{{ demand.created_at | date: 'dd/MM/yyyy' }}</div>
+            </td>
+            <td class="flex-row">
+              <a [routerLink]="" (click)="accept(demand, demand.id)" class="btn btn-success me-2">Accept</a>
+              <button (click)="addModal(demand)" data-target="" class="m-0 float-right btn btn-danger">
+                Refuse
+              </button>
+              <!-- <div [routerLink]="" (click)="toRefuseForm(demand.id)" class="btn btn-danger">Refuse</div> -->
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<ng-template #editModal let-modal>
+  <form class="modal-content" #demandForm="ngForm">
+    <div class="modal-header bg-success">
+      <h4 class="modal-title">Refuse Demand</h4>
+      <button type="button" class="close" aria-label="Close" (click)="dismissModal(modal)"><i
+          class="fas fa-times text-white"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="refusalReason">Refusal Reason</label>
+        <input type="text" [(ngModel)]="demand.refusalReason" class="form-control mb-2" id="refusalReason"
+          name="refusalReason" placeholder="Refusal Reason" required #refusalReason="ngModel">
+      </div>
+      <div [hidden]="refusalReason.untouched" class="alert alert-danger">Refusal Reason is required</div>
+      <div class="form-group">
+        <label for="notes">Notes</label>
+        <input type="text" [(ngModel)]="demand.notes" class="form-control mb-2" id="notes" name="notes"
+          placeholder="Enter your company name" required #notes="ngModel">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" (click)="refuseDemand(modal)" [disabled]="demandForm.form.invalid"
+        class="btn btn-info">Modify</button>
+    </div>
+  </form>
+</ng-template>

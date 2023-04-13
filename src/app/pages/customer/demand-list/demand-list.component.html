@@ -5,7 +5,6 @@
       <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Company Name</th>
           <th scope="col">Concerned Site</th>
           <th scope="col">Concerned Local</th>
           <th scope="col">Equipment Addition</th>
@@ -21,9 +20,6 @@
           <ng-container *ngIf="demand.user.email === myEmail">
             <td>
               <div>{{ i+1 }}</div>
-            </td>
-            <td>
-              <div>{{ demand.user.companyName }}</div>
             </td>
             <td>
               <div>{{ demand.concernedSite }}</div>

@@ -32,20 +32,4 @@ export class DemandListComponent {
     }
   }
 
-  del(demand: Demand) {
-    this.demandService.delete(demand).subscribe(data => {
-      alert("Demand deleted Successfully");
-      this.getAll();
-    });
-  }
-
-  modify(id: any) {
-    var navigationExtras: NavigationExtras = {
-      queryParams: {
-        demandId: id,
-      },
-    };
-
-    this.router.navigate(["/modifydemand"], navigationExtras);
-  }
 }

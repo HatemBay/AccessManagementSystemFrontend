@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../../app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CustomersListComponent } from 'src/app/pages/customers-list/customers-list.component';
-import { CustomersFormComponent } from 'src/app/pages/customers-form/customers-form.component';
+import { CustomersListComponent } from 'src/app/pages/admin/customers-list/customers-list.component';
+import { CustomersFormComponent } from 'src/app/pages/admin/customers-form/customers-form.component';
 
 
 
