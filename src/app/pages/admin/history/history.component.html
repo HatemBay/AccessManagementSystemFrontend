@@ -1,12 +1,5 @@
 <app-dashboard></app-dashboard>
 <div class="card my-5">
-  <div class="card-header">
-    <div class="row d-flex flex-row-reverse">
-      <div class="d-flex flex-row-reverse mx-4">
-        <button [routerLink]="['/history']" class="btn btn-primary history" type="button">History</button>
-      </div>
-    </div>
-  </div>
   <div class="card-body">
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
@@ -21,7 +14,7 @@
           <th scope="col">Date Of Visit</th>
           <th scope="col">Visit Schedule</th>
           <th scope="col">Created At:</th>
-          <th scope="col">Actions</th>
+          <th scope="col">State</th>
         </tr>
       </thead>
       <tbody>
@@ -59,10 +52,12 @@
             <div>{{ demand.created_at | date: 'dd/MM/yyyy' }}</div>
           </td>
           <td class="flex-row">
-            <a [routerLink]="" (click)="accept(demand, demand.id)" class="btn btn-success me-2">Accept</a>
-            <button (click)="addModal(demand)" data-target="" class="m-0 float-right btn btn-danger">
-              Refuse
-            </button>
+            <ng-container *ngIf="demand.state">
+              <div class="inline-block me-5">Accepted</div>
+            </ng-container>
+            <ng-container *ngIf="!demand.state">
+              <div class="inline-block me-5">Refused</div>
+            </ng-container>
             <!-- <div [routerLink]="" (click)="toRefuseForm(demand.id)" class="btn btn-danger">Refuse</div> -->
           </td>
         </tr>
@@ -70,30 +65,3 @@
     </table>
   </div>
 </div>
-
-<ng-template #editModal let-modal>
-  <form class="modal-content" #demandForm="ngForm">
-    <div class="modal-header bg-success">
-      <h4 class="modal-title">Refuse Demand</h4>
-      <button type="button" class="close" aria-label="Close" (click)="dismissModal(modal)"><i
-          class="fas fa-times text-white"></i></button>
-    </div>
-    <div class="modal-body">
-      <div class="form-group">
-        <label for="refusalReason">Refusal Reason</label>
-        <input type="text" [(ngModel)]="demand.refusalReason" class="form-control mb-2" id="refusalReason"
-          name="refusalReason" placeholder="Refusal Reason" required #refusalReason="ngModel">
-      </div>
-      <div [hidden]="refusalReason.untouched" class="alert alert-danger">Refusal Reason is required</div>
-      <div class="form-group">
-        <label for="notes">Notes</label>
-        <input type="text" [(ngModel)]="demand.notes" class="form-control mb-2" id="notes" name="notes"
-          placeholder="Enter your company name" required #notes="ngModel">
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button type="submit" (click)="refuseDemand(modal)" [disabled]="demandForm.form.invalid"
-        class="btn btn-info">Modify</button>
-    </div>
-  </form>
-</ng-template>

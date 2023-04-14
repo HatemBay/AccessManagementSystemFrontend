@@ -19,6 +19,7 @@ import { DemandListComponent } from './pages/customer/demand-list/demand-list.co
 import { DatePipe } from '@angular/common';
 import { AdminDemandListComponent } from './pages/admin/admin-demand-list/admin-demand-list.component';
 import { NgbActiveModal, } from '@ng-bootstrap/ng-bootstrap';
+import { HistoryComponent } from './pages/admin/history/history.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { NgbActiveModal, } from '@ng-bootstrap/ng-bootstrap';
     DemandFormComponent,
     DemandListComponent,
     AdminDemandListComponent,
+    HistoryComponent,
   ],
   // declarations: [AppComponent, CustomersListComponent, CustomersFormComponent],
   imports: [

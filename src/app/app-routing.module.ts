@@ -13,6 +13,7 @@ import { CustomerDashboardComponent } from './pages/customer/customer-dashboard/
 import { DemandFormComponent } from './pages/customer/demand-form/demand-form.component';
 import { DemandListComponent } from './pages/customer/demand-list/demand-list.component';
 import { AdminDemandListComponent } from './pages/admin/admin-demand-list/admin-demand-list.component';
+import { HistoryComponent } from './pages/admin/history/history.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'addcustomer', component: CustomersFormComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: "ADMIN" } },
   { path: 'modifycustomer', component: ModifyCustomerComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: "ADMIN" } },
   { path: 'demands', component: AdminDemandListComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: "ADMIN" } },
+  { path: 'history', component: HistoryComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: "ADMIN" } },
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: "CUSTOMER" } },
   { path: 'customer-dashboard', component: CustomerDashboardComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: "CUSTOMER" } },
   { path: 'add-demand', component: DemandFormComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: "CUSTOMER" } },
