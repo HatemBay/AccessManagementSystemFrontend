@@ -19,12 +19,14 @@ export class LoginComponent {
   loginForm: any;
   constructor(private router: Router, private route: ActivatedRoute, private customerService: CustomerService,
     private authService: AuthService, private cdRef: ChangeDetectorRef, private fb: FormBuilder) {
-    const userInfo = authService.getUserDetails();
-    if (userInfo && userInfo !== null) {
-      if (userInfo.role === "ADMIN")
-        this.router.navigateByUrl("/dashboard")
-      else if (userInfo.role === "CUSTOMER") {
-        this.router.navigateByUrl("/customer-dashboard")
+    if (localStorage.getItem("user-info")) {
+      const userInfo = authService.getUserDetails();
+      if (userInfo && userInfo !== null) {
+        if (userInfo.role === "ADMIN")
+          this.router.navigateByUrl("/dashboard")
+        else if (userInfo.role === "CUSTOMER") {
+          this.router.navigateByUrl("/customer-dashboard")
+        }
       }
     }
   }

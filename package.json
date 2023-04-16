@@ -20,6 +20,12 @@
     "@angular/router": "^15.2.0",
     "@ng-bootstrap/ng-bootstrap": "^14.1.0",
     "bootstrap": "^5.2.3",
+    "html-to-pdfmake": "^2.4.16",
+    "html2pdf": "^0.0.11",
+    "html2pdf.js": "^0.9.0",
+    "jspdf-autotable": "^3.5.28",
+    "ng2-pdf-viewer": "^9.1.4",
+    "pdfmake": "^0.2.7",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

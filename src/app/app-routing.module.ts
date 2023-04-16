@@ -14,6 +14,7 @@ import { DemandFormComponent } from './pages/customer/demand-form/demand-form.co
 import { DemandListComponent } from './pages/customer/demand-list/demand-list.component';
 import { AdminDemandListComponent } from './pages/admin/admin-demand-list/admin-demand-list.component';
 import { HistoryComponent } from './pages/admin/history/history.component';
+import { PdfPageComponent } from './pages/customer/pdf-page/pdf-page.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'customer-dashboard', component: CustomerDashboardComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: "CUSTOMER" } },
   { path: 'add-demand', component: DemandFormComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: "CUSTOMER" } },
   { path: 'customer-demands', component: DemandListComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: "CUSTOMER" } },
+  { path: 'pdf', component: PdfPageComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: "CUSTOMER" } },
   { path: 'forbidden', component: ForbiddenComponent },
 ];
 

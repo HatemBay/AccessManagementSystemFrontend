@@ -1,0 +1,362 @@
+<div>
+  <div id="pdf">
+    <div class="container-fluid a4">
+      <div align="center"
+        style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>
+        <table style="width: 4.5e+2pt;border-collapse:collapse;border:none;">
+          <tbody>
+            <tr>
+              <td colspan="6"
+                style="width:16.0cm;border:solid #70AD47 1.0pt;background:#70AD47;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;color:white;">Partie réservée au
+                      demandeur :</span></strong>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="6"
+                style="width:16.0cm;border:solid #A8D08D 1.0pt;border-top:none;background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p class="inline"
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;color:black;">Date de la demande
+                      :&nbsp; </span></strong><span id="created_at" class="h6 text-capitalize"></span>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="6"
+                style="width:16.0cm;border:solid #A8D08D 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;">Demandeur :&nbsp;</span></strong><span
+                    id="userName" class="h6 text-capitalize"></span>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3"
+                style="width:227.2pt;border:solid #A8D08D 1.0pt;border-top:none;background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;color:black;">Site concern&eacute;
+                      :&nbsp;</span></strong><span id="concernedSite" class="h6 text-capitalize"></span>
+                </p>
+              </td>
+              <td colspan="3"
+                style="width:226.4pt;border-top:none;border-left:  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;color:black;">Local concern&eacute;
+                      :&nbsp;</span></strong><span id="concernedLocal" class="h6 text-capitalize"></span>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="6"
+                style="width:16.0cm;border:solid #A8D08D 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;">Objet de la demande
+                      :&nbsp;</span></strong><span id="demandObject" class="h6 text-capitalize"></span>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="6"
+                style="width:16.0cm;border:solid #A8D08D 1.0pt;border-top:none;background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt;height:21.65pt;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;color:black;">Ajout d&rsquo;&eacute;quipements
+                      &nbsp;
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Oui&nbsp;</span></strong><input type="checkbox"
+                    [checked]="checkedAdd"><strong><span style="font-size:15px;line-height:  115%;color:black;">&nbsp;
+                      &nbsp;
+                      Non&nbsp;</span></strong><input type="checkbox" [checked]="!checkedAdd"><strong><span
+                      style="font-size:15px;line-height:  115%;color:black;">&nbsp; &nbsp; (Si Oui alors
+                      l&rsquo;Autorisation
+                      d&rsquo;Entr&eacute;e d&rsquo;&eacute;quipements au DC doit &ecirc;tre jointe, d&ucirc;ment
+                      remplie
+                      et
+                      approuv&eacute;e par notre Service Commercial).</span></strong>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="6"
+                style="width:16.0cm;border:solid #A8D08D 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:21.65pt;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;">R&eacute;cup&eacute;ration
+                      d&rsquo;&eacute;quipements
+                      &nbsp;Oui&nbsp;</span></strong><input type="checkbox" [checked]="checkedAdd"><strong><span
+                      style="font-size:15px;line-height:115%;">&nbsp; &nbsp; Non&nbsp;</span></strong><input
+                    type="checkbox" [checked]="!checkedAdd"><strong><span
+                      style="font-size:15px;line-height:115%;">&nbsp; &nbsp; (Si Oui alors
+                      l&rsquo;Autorisation de sortie d&rsquo;&eacute;quipements du DC doit &ecirc;tre jointe,
+                      d&ucirc;ment
+                      remplie et approuv&eacute;e par notre Service Commercial).</span></strong>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="width:120.35pt;border:solid #A8D08D 1.0pt;border-top:none;background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;color:black;">Date de l&rsquo;intervention/visite
+                      :</span></strong>
+                </p>
+              </td>
+              <td
+                style="width:28.25pt;border-top:none;border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <span style="font-size:15px;line-height:115%;color:black;">du :</span>
+                </p>
+              </td>
+              <td colspan="2"
+                style="width:118.7pt;border-top:none;border-left:  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <span style="font-size:15px;line-height:115%;">&nbsp;</span><span id="visitDayStart"
+                    class="h6 text-capitalize"></span>
+                </p>
+              </td>
+              <td
+                style="width:32.7pt;border-top:none;border-left:none;border-bottom:  solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <span style="font-size:15px;line-height:115%;color:black;">au</span>
+                </p>
+              </td>
+              <td
+                style="width:153.6pt;border-top:none;border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <span style="font-size:15px;line-height:115%;">&nbsp;</span><span id="visitDayEnd" class="h6 text-capitalize"></span>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="width:120.35pt;border:solid #A8D08D 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;">Horaire de l&rsquo;intervention/visite
+                      :</span></strong>
+                </p>
+              </td>
+              <td
+                style="width:28.25pt;border-top:none;border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <span style="font-size:15px;line-height:115%;">de :</span>
+                </p>
+              </td>
+              <td colspan="2"
+                style="width:118.7pt;border-top:none;border-left:  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <span style="font-size:15px;line-height:115%;">&nbsp;</span><span id="visitDateStart"
+                    class="h6 text-capitalize"></span>
+                </p>
+              </td>
+              <td
+                style="width:32.7pt;border-top:none;border-left:none;border-bottom:  solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <span style="font-size:15px;line-height:115%;">&agrave;</span>
+                </p>
+              </td>
+              <td
+                style="width:153.6pt;border-top:none;border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <span style="font-size:15px;line-height:115%;">&nbsp;</span><span id="visitDateEnd" class="h6 text-capitalize"></span>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="6"
+                style="width:16.0cm;border:solid #A8D08D 1.0pt;border-top:none;background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;color:black;">Liste des personnes
+                      :&nbsp;</span></strong><strong><span style="font-size:15px;line-height:  115%;color:black;">(dans
+                      le
+                      cas
+                      o&ugrave; le nombre d&rsquo;intervenant/visiteur est important, une liste pourrait &ecirc;tre
+                      rattach&eacute;e &agrave; ce document)&nbsp;</span></strong>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3"
+                style="width:227.2pt;border:solid #A8D08D 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;">Prénom et NOM</span></strong>
+                </p>
+              </td>
+              <td colspan="3"
+                style="width:226.4pt;border-top:none;border-left:  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;">N&deg; de la pi&egrave;ce
+                      d'identité
+                      (CIN ou PASSEPORT)</span></strong>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3"
+                style="width:227.2pt;border:solid #A8D08D 1.0pt;border-top:none;background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span
+                      style="font-size:15px;line-height:115%;color:black;">&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span></strong>
+                </p>
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span
+                      style="font-size:15px;line-height:115%;color:black;">&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span></strong>
+                </p>
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span
+                      style="font-size:15px;line-height:115%;color:black;">&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span></strong>
+                </p>
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span
+                      style="font-size:15px;line-height:115%;color:black;">&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span></strong>
+                </p>
+              </td>
+              <td colspan="3"
+                style="width:226.4pt;border-top:none;border-left:  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <span style="font-size:15px;line-height:115%;color:black;"><span id="cin" class="h6 text-capitalize"></span></span>
+                </p>
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <span
+                    style="font-size:15px;line-height:115%;color:black;">&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span>
+                </p>
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <span
+                    style="font-size:15px;line-height:115%;color:black;">&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span>
+                </p>
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <span
+                    style="font-size:15px;line-height:115%;color:black;">&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td style="border:none;"><br></td>
+              <td style="border:none;"><br></td>
+              <td style="border:none;"><br></td>
+              <td style="border:none;"><br></td>
+              <td style="border:none;"><br></td>
+              <td style="border:none;"><br></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style='margin:0cm;font-size:15px;font-family:"Calibri",sans-serif;'>&nbsp;</p>
+      <div align="center"
+        style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>
+        <table style="width: 4.5e+2pt;border-collapse:collapse;border:none;">
+          <tbody>
+            <tr>
+              <td colspan="2"
+                style="width:505.0pt;border:solid #70AD47 1.0pt;background:#70AD47;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;color:white;">Partie r&eacute;serv&eacute;e
+                      &agrave;
+                      l&rsquo;&eacute;quipe S&eacute;curit&eacute;</span></strong>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="width: 252.5pt;border-right: 1pt solid rgb(168, 208, 141);border-bottom: 1pt solid rgb(168, 208, 141);border-left: 1pt solid rgb(168, 208, 141);border-image: initial;border-top: none;background: rgb(226, 239, 217);padding: 0cm 5.4pt;height: 1cm;vertical-align: top;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;color:black;">Demande
+                      accept&eacute;e&nbsp;:&nbsp;</span></strong> <span id="accepted" class="h6 text-capitalize"></span>
+                </p>
+              </td>
+              <td
+                style="width: 252.5pt;border-top: none;border-left: none;border-bottom: 1pt solid rgb(168, 208, 141);border-right: 1pt solid rgb(168, 208, 141);background: rgb(226, 239, 217);padding: 0cm 5.4pt;height: 1cm;vertical-align: top;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;color:black;">Demande
+                      refus&eacute;e&nbsp;:&nbsp;</span></strong><span id="refused" class="h6 text-capitalize"></span>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="width: 252.5pt;border-right: 1pt solid rgb(168, 208, 141);border-bottom: 1pt solid rgb(168, 208, 141);border-left: 1pt solid rgb(168, 208, 141);border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 1cm;vertical-align: top;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;">Nom :&nbsp;</span></strong><span id="admin"
+                    class="h6 text-capitalize">Admin</span>
+                </p>
+              </td>
+              <td
+                style="width: 252.5pt;border-top: none;border-left: none;border-bottom: 1pt solid rgb(168, 208, 141);border-right: 1pt solid rgb(168, 208, 141);padding: 0cm 5.4pt;height: 1cm;vertical-align: top;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;">Motif du refus :&nbsp;</span></strong><span
+                    id="refusalReason" class="h6 text-capitalize"></span>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="width: 252.5pt;border-right: 1pt solid rgb(168, 208, 141);border-bottom: 1pt solid rgb(168, 208, 141);border-left: 1pt solid rgb(168, 208, 141);border-image: initial;border-top: none;background: rgb(226, 239, 217);padding: 0cm 5.4pt;height: 1cm;vertical-align: top;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;">&nbsp;</span></strong>
+                </p>
+              </td>
+              <td
+                style="width: 252.5pt;border-top: none;border-left: none;border-bottom: 1pt solid rgb(168, 208, 141);border-right: 1pt solid rgb(168, 208, 141);background: rgb(226, 239, 217);padding: 0cm 5.4pt;height: 1cm;vertical-align: top;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;color:black;">Date :&nbsp;</span></strong><span
+                    id="updated_at"></span>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"
+                style="width: 505pt;border-right: 1pt solid rgb(168, 208, 141);border-bottom: 1pt solid rgb(168, 208, 141);border-left: 1pt solid rgb(168, 208, 141);border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 1cm;vertical-align: top;">
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;">Consignes particuli&egrave;res
+                      :&nbsp;</span></strong><span id="notes" class="h6 text-capitalize"></span>
+                </p>
+                <p
+                  style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+                  <strong><span style="font-size:15px;line-height:115%;">&nbsp;</span></strong>
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p
+        style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;'>
+        &nbsp;</p>
+    </div>
+  </div>
+</div>

@@ -20,6 +20,7 @@ import { DatePipe } from '@angular/common';
 import { AdminDemandListComponent } from './pages/admin/admin-demand-list/admin-demand-list.component';
 import { NgbActiveModal, } from '@ng-bootstrap/ng-bootstrap';
 import { HistoryComponent } from './pages/admin/history/history.component';
+import { PdfPageComponent } from './pages/customer/pdf-page/pdf-page.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { HistoryComponent } from './pages/admin/history/history.component';
     DemandListComponent,
     AdminDemandListComponent,
     HistoryComponent,
+    PdfPageComponent,
   ],
   // declarations: [AppComponent, CustomersListComponent, CustomersFormComponent],
   imports: [

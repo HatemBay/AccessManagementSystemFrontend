@@ -13,6 +13,7 @@
           <th scope="col">Visit Schedule</th>
           <th scope="col">Created At:</th>
           <th scope="col">State</th>
+          <th scope="col">PDF</th>
         </tr>
       </thead>
       <tbody>
@@ -45,14 +46,21 @@
               <div>{{ demand.created_at | date: 'dd/MM/yyyy' }}</div>
             </td>
             <td class="flex-row">
-              <ng-container *ngIf="demand.state === null">
+              <ng-container *ngIf="demand.state === null;else accepted">
                 <div>In Treatement..</div>
               </ng-container>
-              <ng-container *ngIf="demand.state === 0">
+              <ng-template #accepted>
+                <ng-container *ngIf="demand.state;else refused">
+                  <div>Accepted</div>
+                </ng-container>
+              </ng-template>
+              <ng-template #refused>
                 <div>Refused</div>
-              </ng-container>
-              <ng-container *ngIf="demand.state === 1">
-                <div>Accepted</div>
+              </ng-template>
+            </td>
+            <td>
+              <ng-container *ngIf="demand.state !== null">
+                <button type="button" (click)="goToPdf(demand.id)" class="btn btn-info btn-sm">Download</button>
               </ng-container>
             </td>
           </ng-container>
@@ -61,3 +69,4 @@
     </table>
   </div>
 </div>
+
