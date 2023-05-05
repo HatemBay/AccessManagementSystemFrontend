@@ -17,9 +17,12 @@ export class CustomersFormComponent {
     private customerService: CustomerService
   ) {
     this.customer = new Customer();
+    this.customer.role = 'CUSTOMER';
   }
 
   onSubmit() {
+    console.log(this.customer);
+
     this.customerService
       .save(this.customer)
       .subscribe(() => this.gotoCustomerList());

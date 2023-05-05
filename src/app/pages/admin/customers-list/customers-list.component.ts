@@ -10,6 +10,7 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class CustomersListComponent {
   customers: Customer[] = [];
+  temp: Customer[] = [];
   myEmail = localStorage.getItem("user-email");
 
   constructor(private customerService: CustomerService, private router: Router) { }
@@ -21,6 +22,7 @@ export class CustomersListComponent {
   getAll() {
     this.customerService.findAll().subscribe((data) => {
       this.customers = data;
+      this.temp = data;
       this.customers = this.customers.reverse();
     });
   }
@@ -40,5 +42,17 @@ export class CustomersListComponent {
     };
 
     this.router.navigate(["/modifycustomer"], navigationExtras);
+  }
+
+  search(input: string) {
+    this.temp = this.customers.filter((customer) =>
+      customer.name.indexOf(input) !== -1 ||
+      customer.cin.indexOf(input) !== -1 ||
+      customer.email.indexOf(input) !== -1 ||
+      customer.role.indexOf(input) !== -1
+    )
+    if (input.length === 0) {
+      this.temp = this.customers;
+    }
   }
 }

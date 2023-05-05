@@ -1,11 +1,21 @@
 <app-dashboard></app-dashboard>
 <div class="card my-5">
+  <div class="card-header">
+    <div class="form-group mb-2 inline">
+      <input type="text" (input)="search($event.target.value)">
+      <label class="switch" hidden>
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
   <div class="card-body">
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
           <th scope="col">Name</th>
+          <th scope="col">Role</th>
           <th scope="col">Company Name</th>
           <th scope="col">Email</th>
           <th scope="col">CIN</th>
@@ -13,12 +23,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let customer of customers">
+        <tr *ngFor="let customer of temp">
           <td>
             <div>{{ customer.id }}</div>
           </td>
           <td>
             <div>{{ customer.name }}</div>
+          </td>
+          <td>
+            <div>{{ customer.role }}</div>
           </td>
           <td>
             <div>{{ customer.companyName }}</div>

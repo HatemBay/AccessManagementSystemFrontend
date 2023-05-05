@@ -41,7 +41,7 @@ export class ModifyCustomerComponent {
   onSubmit() {
     this.customerService
       .save(this.customer)
-      .subscribe(() => this.gotoCustomerList());
+      .subscribe((val) => this.gotoCustomerList());
   }
 
   gotoCustomerList() {
