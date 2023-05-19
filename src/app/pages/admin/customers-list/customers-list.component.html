@@ -2,7 +2,7 @@
 <div class="card my-5">
   <div class="card-header">
     <div class="form-group mb-2 inline">
-      <input type="text" (input)="search($event.target.value)">
+      <input type="text" (input)="search($event.target.value,1)">
       <label class="switch" hidden>
         <input type="checkbox">
         <span class="slider round"></span>
@@ -23,9 +23,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let customer of temp">
+        <tr *ngFor="let customer of temp; let i = index;">
           <td>
-            <div>{{ customer.id }}</div>
+            <div>{{ nbOfElements*currPage-nbOfElements + i+1 }}</div>
           </td>
           <td>
             <div>{{ customer.name }}</div>
@@ -52,5 +52,16 @@
         </tr>
       </tbody>
     </table>
+  </div>
+  <div class="card-footer row">
+    <div class="col-12 inline">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <a (click)="goToPage(1)" class="btn btn-primary active" aria-current="page">1</a>
+        <div *ngIf="tempPages>1">
+          <a (click)="goToPage(i+2)" class="btn btn-primary"
+            *ngFor="let item of [].constructor(tempPages-1); let i = index">{{i+2}}</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
