@@ -1,5 +1,14 @@
 <app-customer-dashboard></app-customer-dashboard>
 <div class="card my-5">
+  <div class="card-header">
+    <div class="form-group mb-2 inline">
+      <input type="text" (input)="search($event.target.value,1)">
+      <label class="switch" hidden>
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
   <div class="card-body">
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
@@ -17,10 +26,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let demand of demands; let i=index">
+        <tr *ngFor="let demand of temp; let i=index">
           <ng-container *ngIf="demand.user.email === myEmail">
             <td>
-              <div>{{ i+1 }}</div>
+              <div>{{ nbOfElements*currPage-nbOfElements + i+1 }}</div>
             </td>
             <td>
               <div>{{ demand.concernedSite }}</div>
@@ -68,5 +77,15 @@
       </tbody>
     </table>
   </div>
+  <div class="card-footer row">
+    <div class="col-12 inline">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <a (click)="goToPage(1)" class="btn btn-primary active" aria-current="page">1</a>
+        <div *ngIf="tempPages>1">
+          <a (click)="goToPage(i+2)" class="btn btn-primary"
+            *ngFor="let item of [].constructor(tempPages-1); let i = index">{{i+2}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-

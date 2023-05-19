@@ -110,7 +110,6 @@ export class AdminDemandListComponent {
   search(input: string, page: number) {
     this.input = input;
     this.filter = true;
-    console.log(this.demands[2].user.companyName);
 
     this.temp = this.demands.filter((demand) => {
       const createdAt = new Date(demand.created_at);
